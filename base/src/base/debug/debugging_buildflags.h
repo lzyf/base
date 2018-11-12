@@ -1,0 +1,7 @@
+#include "build/buildflag.h"
+
+
+#define BUILDFLAG_INTERNAL_ENABLE_LOCATION_SOURCE() 0
+
+#define BUILDFLAG_INTERNAL_CAN_UNWIND_WITH_FRAME_POINTERS() 0
+

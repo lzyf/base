@@ -30,7 +30,8 @@
     <ClCompile Include="src\base\base_switches.cc" />
     <ClCompile Include="src\base\big_endian.cc" />
     <ClCompile Include="src\base\build_time.cc">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\base\callback_helpers.cc" />
     <ClCompile Include="src\base\callback_internal.cc" />
@@ -82,6 +83,7 @@
     <ClCompile Include="src\base\files\scoped_temp_dir.cc" />
     <ClCompile Include="src\base\file_descriptor_store.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\base\file_version_info_win.cc" />
     <ClCompile Include="src\base\guid.cc" />
@@ -124,9 +126,13 @@
     <ClCompile Include="src\base\memory\ref_counted_memory.cc" />
     <ClCompile Include="src\base\memory\shared_memory_handle.cc" />
     <ClCompile Include="src\base\memory\shared_memory_handle_win.cc" />
-    <ClCompile Include="src\base\memory\shared_memory_helper.cc" />
+    <ClCompile Include="src\base\memory\shared_memory_helper.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\memory\shared_memory_mapping.cc" />
-    <ClCompile Include="src\base\memory\shared_memory_nacl.cc" />
+    <ClCompile Include="src\base\memory\shared_memory_nacl.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\memory\shared_memory_tracker.cc" />
     <ClCompile Include="src\base\memory\shared_memory_win.cc" />
     <ClCompile Include="src\base\memory\unsafe_shared_memory_region.cc" />
@@ -137,9 +143,16 @@
     <ClCompile Include="src\base\message_loop\message_loop_task_runner.cc" />
     <ClCompile Include="src\base\message_loop\message_pump.cc" />
     <ClCompile Include="src\base\message_loop\message_pump_default.cc" />
-    <ClCompile Include="src\base\message_loop\message_pump_glib.cc" />
-    <ClCompile Include="src\base\message_loop\message_pump_io_ios.cc" />
-    <ClCompile Include="src\base\message_loop\message_pump_libevent.cc" />
+    <ClCompile Include="src\base\message_loop\message_pump_glib.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\message_loop\message_pump_io_ios.cc">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\message_loop\message_pump_libevent.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\message_loop\message_pump_win.cc" />
     <ClCompile Include="src\base\message_loop\pending_task_queue.cc" />
     <ClCompile Include="src\base\native_library.cc" />
@@ -147,33 +160,57 @@
     <ClCompile Include="src\base\observer_list_internal.cc" />
     <ClCompile Include="src\base\observer_list_threadsafe.cc" />
     <ClCompile Include="src\base\observer_list_types.cc" />
-    <ClCompile Include="src\base\os_compat_nacl.cc" />
+    <ClCompile Include="src\base\os_compat_nacl.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\path_service.cc" />
     <ClCompile Include="src\base\pending_task.cc" />
     <ClCompile Include="src\base\pickle.cc" />
-    <ClCompile Include="src\base\process\internal_aix.cc" />
+    <ClCompile Include="src\base\process\internal_aix.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\process\kill.cc" />
     <ClCompile Include="src\base\process\kill_win.cc" />
     <ClCompile Include="src\base\process\launch.cc" />
-    <ClCompile Include="src\base\process\launch_ios.cc" />
+    <ClCompile Include="src\base\process\launch_ios.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\process\launch_win.cc" />
     <ClCompile Include="src\base\process\memory.cc" />
-    <ClCompile Include="src\base\process\memory_stubs.cc" />
+    <ClCompile Include="src\base\process\memory_stubs.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\process\memory_win.cc" />
     <ClCompile Include="src\base\process\process_handle.cc" />
-    <ClCompile Include="src\base\process\process_handle_freebsd.cc" />
-    <ClCompile Include="src\base\process\process_handle_openbsd.cc" />
+    <ClCompile Include="src\base\process\process_handle_freebsd.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_handle_openbsd.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\process\process_handle_win.cc" />
     <ClCompile Include="src\base\process\process_info_win.cc" />
     <ClCompile Include="src\base\process\process_iterator.cc" />
-    <ClCompile Include="src\base\process\process_iterator_freebsd.cc" />
-    <ClCompile Include="src\base\process\process_iterator_openbsd.cc" />
+    <ClCompile Include="src\base\process\process_iterator_freebsd.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_iterator_openbsd.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\process\process_iterator_win.cc" />
     <ClCompile Include="src\base\process\process_metrics.cc" />
-    <ClCompile Include="src\base\process\process_metrics_freebsd.cc" />
-    <ClCompile Include="src\base\process\process_metrics_ios.cc" />
-    <ClCompile Include="src\base\process\process_metrics_nacl.cc" />
-    <ClCompile Include="src\base\process\process_metrics_openbsd.cc" />
+    <ClCompile Include="src\base\process\process_metrics_freebsd.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_metrics_ios.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_metrics_nacl.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_metrics_openbsd.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\process\process_metrics_win.cc" />
     <ClCompile Include="src\base\process\process_win.cc" />
     <ClCompile Include="src\base\profiler\native_stack_sampler.cc" />
@@ -182,7 +219,9 @@
     <ClCompile Include="src\base\profiler\test_support_library.cc" />
     <ClCompile Include="src\base\profiler\win32_stack_frame_unwinder.cc" />
     <ClCompile Include="src\base\rand_util.cc" />
-    <ClCompile Include="src\base\rand_util_nacl.cc" />
+    <ClCompile Include="src\base\rand_util_nacl.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\rand_util_win.cc" />
     <ClCompile Include="src\base\run_loop.cc" />
     <ClCompile Include="src\base\scoped_native_library.cc" />
@@ -196,7 +235,9 @@
     <ClCompile Include="src\base\strings\pattern.cc" />
     <ClCompile Include="src\base\strings\safe_sprintf.cc" />
     <ClCompile Include="src\base\strings\strcat.cc" />
-    <ClCompile Include="src\base\strings\string16.cc" />
+    <ClCompile Include="src\base\strings\string16.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\strings\stringprintf.cc" />
     <ClCompile Include="src\base\strings\string_number_conversions.cc" />
     <ClCompile Include="src\base\strings\string_number_conversions_fuzzer.cc" />
@@ -218,16 +259,23 @@
     <ClCompile Include="src\base\synchronization\lock_impl_win.cc" />
     <ClCompile Include="src\base\synchronization\waitable_event_watcher_win.cc" />
     <ClCompile Include="src\base\synchronization\waitable_event_win.cc" />
-    <ClCompile Include="src\base\sync_socket_nacl.cc" />
+    <ClCompile Include="src\base\sync_socket_nacl.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\sync_socket_win.cc" />
     <ClCompile Include="src\base\syslog_logging.cc" />
     <ClCompile Include="src\base\sys_info.cc" />
-    <ClCompile Include="src\base\sys_info_chromeos.cc" />
-    <ClCompile Include="src\base\sys_info_freebsd.cc" />
-    <ClCompile Include="src\base\sys_info_openbsd.cc" />
+    <ClCompile Include="src\base\sys_info_chromeos.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\sys_info_freebsd.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\sys_info_openbsd.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\sys_info_win.cc" />
     <ClCompile Include="src\base\task_runner.cc" />
-    <ClCompile Include="src\base\third_party\dmg_fp\dtoa.cc" />
     <ClCompile Include="src\base\third_party\dmg_fp\dtoa_wrapper.cc" />
     <ClCompile Include="src\base\third_party\dmg_fp\g_fmt.cc" />
     <ClCompile Include="src\base\third_party\dynamic_annotations\dynamic_annotations.c" />
@@ -289,7 +337,9 @@
     <ClCompile Include="src\base\win\scoped_bstr.cc" />
     <ClCompile Include="src\base\win\scoped_com_initializer.cc" />
     <ClCompile Include="src\base\win\scoped_handle.cc" />
-    <ClCompile Include="src\base\win\scoped_handle_test_dll.cc" />
+    <ClCompile Include="src\base\win\scoped_handle_test_dll.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\win\scoped_handle_verifier.cc" />
     <ClCompile Include="src\base\win\scoped_hstring.cc" />
     <ClCompile Include="src\base\win\scoped_process_information.cc" />
@@ -330,7 +380,8 @@
     <ClInclude Include="src\base\bits.h" />
     <ClInclude Include="src\base\bit_cast.h" />
     <ClInclude Include="src\base\build_time.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="src\base\callback.h" />
     <ClInclude Include="src\base\callback_forward.h" />
@@ -402,6 +453,7 @@
     <ClInclude Include="src\base\files\scoped_temp_dir.h" />
     <ClInclude Include="src\base\file_descriptor_store.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="src\base\file_version_info.h" />
     <ClInclude Include="src\base\file_version_info_win.h" />
@@ -442,6 +494,7 @@
     <ClInclude Include="src\base\memory\memory_pressure_monitor_win.h" />
     <ClInclude Include="src\base\memory\platform_shared_memory_region.h" />
     <ClInclude Include="src\base\memory\protected_memory.h" />
+    <ClInclude Include="src\base\memory\protected_memory_buildflags.h" />
     <ClInclude Include="src\base\memory\protected_memory_cfi.h" />
     <ClInclude Include="src\base\memory\ptr_util.h" />
     <ClInclude Include="src\base\memory\raw_scoped_refptr_mismatch_checker.h" />
@@ -452,7 +505,9 @@
     <ClInclude Include="src\base\memory\scoped_policy.h" />
     <ClInclude Include="src\base\memory\scoped_refptr.h" />
     <ClInclude Include="src\base\memory\shared_memory.h" />
-    <ClInclude Include="src\base\memory\shared_memory_helper.h" />
+    <ClInclude Include="src\base\memory\shared_memory_helper.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\base\memory\shared_memory_mapping.h" />
     <ClInclude Include="src\base\memory\shared_memory_tracker.h" />
     <ClInclude Include="src\base\memory\singleton.h" />
@@ -466,9 +521,16 @@
     <ClInclude Include="src\base\message_loop\message_pump_default.h" />
     <ClInclude Include="src\base\message_loop\message_pump_for_io.h" />
     <ClInclude Include="src\base\message_loop\message_pump_for_ui.h" />
-    <ClInclude Include="src\base\message_loop\message_pump_glib.h" />
-    <ClInclude Include="src\base\message_loop\message_pump_io_ios.h" />
-    <ClInclude Include="src\base\message_loop\message_pump_libevent.h" />
+    <ClInclude Include="src\base\message_loop\message_pump_glib.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\base\message_loop\message_pump_io_ios.h">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\base\message_loop\message_pump_libevent.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\base\message_loop\message_pump_win.h" />
     <ClInclude Include="src\base\message_loop\pending_task_queue.h" />
     <ClInclude Include="src\base\message_loop\sequenced_task_source.h" />
@@ -480,12 +542,16 @@
     <ClInclude Include="src\base\observer_list_threadsafe.h" />
     <ClInclude Include="src\base\observer_list_types.h" />
     <ClInclude Include="src\base\optional.h" />
-    <ClInclude Include="src\base\os_compat_nacl.h" />
+    <ClInclude Include="src\base\os_compat_nacl.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\base\path_service.h" />
     <ClInclude Include="src\base\pending_task.h" />
     <ClInclude Include="src\base\pickle.h" />
     <ClInclude Include="src\base\post_task_and_reply_with_result_internal.h" />
-    <ClInclude Include="src\base\process\internal_aix.h" />
+    <ClInclude Include="src\base\process\internal_aix.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\base\process\kill.h" />
     <ClInclude Include="src\base\process\launch.h" />
     <ClInclude Include="src\base\process\memory.h" />
@@ -595,6 +661,7 @@
     <ClInclude Include="src\base\vlog.h" />
     <ClInclude Include="src\base\win\async_operation.h" />
     <ClInclude Include="src\base\win\atl.h" />
+    <ClInclude Include="src\base\win\base_win_buildflags.h" />
     <ClInclude Include="src\base\win\com_init_check_hook.h" />
     <ClInclude Include="src\base\win\com_init_util.h" />
     <ClInclude Include="src\base\win\core_winrt_util.h" />
@@ -663,7 +730,9 @@
     <None Include="src\base\PRESUBMIT.py" />
     <None Include="src\base\profiler\OWNERS" />
     <None Include="src\base\strings\OWNERS" />
-    <None Include="src\base\sys_info_ios.mm" />
+    <None Include="src\base\sys_info_ios.mm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
     <None Include="src\base\third_party\dmg_fp\const_hexdig.patch" />
     <None Include="src\base\third_party\dmg_fp\exp_length.patch" />
     <None Include="src\base\third_party\dmg_fp\gcc_64_bit.patch" />
@@ -696,7 +765,7 @@
     <ProjectGuid>{22E1C02F-29EE-4158-85D7-3CEFCBEF9F7F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>base</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -760,7 +829,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_HAS_EXCEPTIONS=0;_CRT_SECURE_NO_WARNINGS;NOMINMAX;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WINSOCKAPI_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -768,6 +837,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <DisableSpecificWarnings>4577</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

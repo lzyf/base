@@ -116,7 +116,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\base\memory\memory_pressure_monitor.cc" />
-    <ClCompile Include="src\base\memory\memory_pressure_monitor_win.cc" />
+    <ClCompile Include="src\base\memory\memory_pressure_monitor_win.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\memory\platform_shared_memory_region.cc" />
     <ClCompile Include="src\base\memory\platform_shared_memory_region_win.cc" />
     <ClCompile Include="src\base\memory\protected_memory.cc" />
@@ -138,7 +140,11 @@
     <ClCompile Include="src\base\memory\unsafe_shared_memory_region.cc" />
     <ClCompile Include="src\base\memory\weak_ptr.cc" />
     <ClCompile Include="src\base\memory\writable_shared_memory_region.cc" />
-    <ClCompile Include="src\base\message_loop\message_loop.cc" />
+    <ClCompile Include="src\base\message_loop\message_loop.cc">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\base\message_loop\message_loop_current.cc" />
     <ClCompile Include="src\base\message_loop\message_loop_task_runner.cc" />
     <ClCompile Include="src\base\message_loop\message_pump.cc" />
@@ -153,7 +159,9 @@
     <ClCompile Include="src\base\message_loop\message_pump_libevent.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\base\message_loop\message_pump_win.cc" />
+    <ClCompile Include="src\base\message_loop\message_pump_win.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\message_loop\pending_task_queue.cc" />
     <ClCompile Include="src\base\native_library.cc" />
     <ClCompile Include="src\base\native_library_win.cc" />
@@ -491,7 +499,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="src\base\memory\memory_pressure_monitor.h" />
-    <ClInclude Include="src\base\memory\memory_pressure_monitor_win.h" />
+    <ClInclude Include="src\base\memory\memory_pressure_monitor_win.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\base\memory\platform_shared_memory_region.h" />
     <ClInclude Include="src\base\memory\protected_memory.h" />
     <ClInclude Include="src\base\memory\protected_memory_buildflags.h" />
@@ -531,7 +541,9 @@
     <ClInclude Include="src\base\message_loop\message_pump_libevent.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="src\base\message_loop\message_pump_win.h" />
+    <ClInclude Include="src\base\message_loop\message_pump_win.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\base\message_loop\pending_task_queue.h" />
     <ClInclude Include="src\base\message_loop\sequenced_task_source.h" />
     <ClInclude Include="src\base\message_loop\timer_slack.h" />
@@ -714,7 +726,6 @@
     <ClInclude Include="src\base\win\wrapped_window_proc.h" />
     <ClInclude Include="src\build\buildflag.h" />
     <ClInclude Include="src\build\build_config.h" />
-    <ClInclude Include="src\build\precompile.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\base\BUILD.gn" />
@@ -838,6 +849,10 @@
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <DisableSpecificWarnings>4577</DisableSpecificWarnings>
+      <LanguageStandard>
+      </LanguageStandard>
+      <PrecompiledHeaderFile>build/precompile.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>build/precompile.h;</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

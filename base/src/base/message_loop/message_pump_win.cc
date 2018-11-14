@@ -85,8 +85,10 @@ int MessagePumpWin::GetCurrentDelay() const {
 // MessagePumpForUI public:
 
 MessagePumpForUI::MessagePumpForUI() {
+	//UINT message = NULL; UINT wparam = NULL; LPARAM lparam = NULL; LRESULT* result = NULL;
   bool succeeded = message_window_.Create(
       BindRepeating(&MessagePumpForUI::MessageCallback, Unretained(this)));
+
   DCHECK(succeeded);
 }
 

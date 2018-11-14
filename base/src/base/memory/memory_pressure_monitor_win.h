@@ -111,7 +111,7 @@ class BASE_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
   // true if the system call succeeds, false otherwise. Can be called on any
   // thread.
   virtual bool GetSystemMemoryStatus(MEMORYSTATUSEX* mem_status);
-
+  void addt(int i, int z);
  private:
   // Threshold amounts of available memory that trigger pressure levels. See
   // memory_pressure_monitor.cc for a discussion of reasonable values for these.

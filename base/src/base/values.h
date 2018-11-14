@@ -137,6 +137,7 @@ class BASE_EXPORT Value {
   explicit Value(const std::vector<char>& in_blob);
   explicit Value(base::span<const uint8_t> in_blob);
   explicit Value(BlobStorage&& in_blob) noexcept;
+  explicit Value(const BlobStorage& in_blob) ;
 
   explicit Value(const DictStorage& in_dict);
   explicit Value(DictStorage&& in_dict) noexcept;
@@ -367,6 +368,7 @@ class BASE_EXPORT Value {
   // Estimates dynamic memory usage.
   // See base/trace_event/memory_usage_estimator.h for more info.
   size_t EstimateMemoryUsage() const;
+
 
  protected:
   // TODO(crbug.com/646113): Make these private once DictionaryValue and

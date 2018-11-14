@@ -2,3 +2,4 @@
 base/debug/
 *.user
 base/x64/
+Debug/

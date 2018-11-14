@@ -164,6 +164,12 @@ Value::Value(base::span<const uint8_t> in_blob)
 Value::Value(BlobStorage&& in_blob) noexcept
     : type_(Type::BINARY), binary_value_(std::move(in_blob)) {}
 
+Value::Value(const BlobStorage& in_list) : type_(Type::BINARY), binary_value_() {
+	binary_value_.reserve(in_list.size());
+	for (const auto& val : in_list)
+		binary_value_.emplace_back(val);
+}
+
 Value::Value(const DictStorage& in_dict) : type_(Type::DICTIONARY), dict_() {
   dict_.reserve(in_dict.size());
   for (const auto& it : in_dict) {
@@ -204,7 +210,7 @@ Value Value::Clone() const {
     case Type::STRING:
       return Value(string_value_);
     case Type::BINARY:
-      return Value(binary_value_);
+		return Value(binary_value_);
     case Type::DICTIONARY:
       return Value(dict_);
     case Type::LIST:

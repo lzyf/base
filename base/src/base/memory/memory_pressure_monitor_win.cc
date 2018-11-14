@@ -49,17 +49,26 @@ const int MemoryPressureMonitor::kSmallMemoryDefaultCriticalThresholdMb = 200;
 const int MemoryPressureMonitor::kLargeMemoryDefaultModerateThresholdMb = 1000;
 const int MemoryPressureMonitor::kLargeMemoryDefaultCriticalThresholdMb = 400;
 
+void MemoryPressureMonitor::addt(int i, int z)
+{
+
+}
+
 MemoryPressureMonitor::MemoryPressureMonitor()
     : moderate_threshold_mb_(0),
       critical_threshold_mb_(0),
-      current_memory_pressure_level_(
+     current_memory_pressure_level_(
           MemoryPressureListener::MEMORY_PRESSURE_LEVEL_NONE),
       moderate_pressure_repeat_count_(0),
-      dispatch_callback_(
-          base::Bind(&MemoryPressureListener::NotifyMemoryPressure)),
+      //dispatch_callback_(
+      //    base::Bind(&MemoryPressureListener::NotifyMemoryPressure)),
       weak_ptr_factory_(this) {
   InferThresholds();
   StartObserving();
+ // auto zzz =  base::Bind(&MemoryPressureListener::NotifyMemoryPressure);
+//  dispatch_callback_ = base::Bind(&addt);
+//  base::Callback<void(int)> sdfsd =  base::Bind(&addt);
+  base::Bind(&MemoryPressureMonitor::addt, weak_ptr_factory_.GetWeakPtr());
 }
 
 MemoryPressureMonitor::MemoryPressureMonitor(int moderate_threshold_mb,
@@ -69,8 +78,8 @@ MemoryPressureMonitor::MemoryPressureMonitor(int moderate_threshold_mb,
       current_memory_pressure_level_(
           MemoryPressureListener::MEMORY_PRESSURE_LEVEL_NONE),
       moderate_pressure_repeat_count_(0),
-      dispatch_callback_(
-          base::Bind(&MemoryPressureListener::NotifyMemoryPressure)),
+      //dispatch_callback_(
+      //    base::Bind(&MemoryPressureListener::NotifyMemoryPressure)),
       weak_ptr_factory_(this) {
   DCHECK_GE(moderate_threshold_mb_, critical_threshold_mb_);
   DCHECK_LE(0, critical_threshold_mb_);

@@ -423,9 +423,6 @@
     <ClCompile Include="src\base\memory\memory_pressure_monitor.cc">
       <Filter>src\base\memory</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\memory\memory_pressure_monitor_win.cc">
-      <Filter>src\base\memory</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\memory\platform_shared_memory_region.cc">
       <Filter>src\base\memory</Filter>
     </ClCompile>
@@ -484,9 +481,6 @@
       <Filter>src\base\message_loop</Filter>
     </ClCompile>
     <ClCompile Include="src\base\message_loop\message_pump_default.cc">
-      <Filter>src\base\message_loop</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\message_loop\message_pump_win.cc">
       <Filter>src\base\message_loop</Filter>
     </ClCompile>
     <ClCompile Include="src\base\message_loop\pending_task_queue.cc">
@@ -926,6 +920,12 @@
     </ClCompile>
     <ClCompile Include="src\base\win\scoped_handle_test_dll.cc">
       <Filter>src\base\win\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\message_loop\message_pump_win.cc">
+      <Filter>src\base\message_loop\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\memory\memory_pressure_monitor_win.cc">
+      <Filter>src\base\memory\__excluded_files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1391,9 +1391,6 @@
     <ClInclude Include="src\base\memory\memory_pressure_monitor.h">
       <Filter>src\base\memory</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\memory\memory_pressure_monitor_win.h">
-      <Filter>src\base\memory</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\memory\platform_shared_memory_region.h">
       <Filter>src\base\memory</Filter>
     </ClInclude>
@@ -1470,9 +1467,6 @@
       <Filter>src\base\message_loop</Filter>
     </ClInclude>
     <ClInclude Include="src\base\message_loop\message_pump_libevent.h">
-      <Filter>src\base\message_loop</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\message_loop\message_pump_win.h">
       <Filter>src\base\message_loop</Filter>
     </ClInclude>
     <ClInclude Include="src\base\message_loop\pending_task_queue.h">
@@ -1877,9 +1871,6 @@
     <ClInclude Include="src\build\buildflag.h">
       <Filter>src\build</Filter>
     </ClInclude>
-    <ClInclude Include="src\build\precompile.h">
-      <Filter>src\build</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\allocator\buildflags.h">
       <Filter>src\base\allocator</Filter>
     </ClInclude>
@@ -1921,6 +1912,12 @@
     </ClInclude>
     <ClInclude Include="src\base\process\internal_aix.h">
       <Filter>src\base\process\__excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\message_loop\message_pump_win.h">
+      <Filter>src\base\message_loop\__excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\memory\memory_pressure_monitor_win.h">
+      <Filter>src\base\memory\__excluded_files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

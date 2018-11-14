@@ -23,8 +23,12 @@
     <ClCompile Include="src\base\barrier_closure.cc" />
     <ClCompile Include="src\base\base64.cc" />
     <ClCompile Include="src\base\base64url.cc" />
-    <ClCompile Include="src\base\base64_decode_fuzzer.cc" />
-    <ClCompile Include="src\base\base64_encode_fuzzer.cc" />
+    <ClCompile Include="src\base\base64_decode_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\base64_encode_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\base_paths.cc" />
     <ClCompile Include="src\base\base_paths_win.cc" />
     <ClCompile Include="src\base\base_switches.cc" />
@@ -88,16 +92,22 @@
     <ClCompile Include="src\base\file_version_info_win.cc" />
     <ClCompile Include="src\base\guid.cc" />
     <ClCompile Include="src\base\hash.cc" />
-    <ClCompile Include="src\base\json\json_correctness_fuzzer.cc" />
+    <ClCompile Include="src\base\json\json_correctness_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\json\json_file_value_serializer.cc" />
     <ClCompile Include="src\base\json\json_parser.cc" />
     <ClCompile Include="src\base\json\json_reader.cc" />
-    <ClCompile Include="src\base\json\json_reader_fuzzer.cc" />
+    <ClCompile Include="src\base\json\json_reader_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\json\json_string_value_serializer.cc" />
     <ClCompile Include="src\base\json\json_value_converter.cc" />
     <ClCompile Include="src\base\json\json_writer.cc" />
     <ClCompile Include="src\base\json\string_escape.cc" />
-    <ClCompile Include="src\base\json\string_escape_fuzzer.cc" />
+    <ClCompile Include="src\base\json\string_escape_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\lazy_instance_helpers.cc" />
     <ClCompile Include="src\base\location.cc" />
     <ClCompile Include="src\base\logging.cc" />
@@ -248,17 +258,25 @@
     </ClCompile>
     <ClCompile Include="src\base\strings\stringprintf.cc" />
     <ClCompile Include="src\base\strings\string_number_conversions.cc" />
-    <ClCompile Include="src\base\strings\string_number_conversions_fuzzer.cc" />
+    <ClCompile Include="src\base\strings\string_number_conversions_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\strings\string_piece.cc" />
     <ClCompile Include="src\base\strings\string_split.cc" />
-    <ClCompile Include="src\base\strings\string_tokenizer_fuzzer.cc" />
+    <ClCompile Include="src\base\strings\string_tokenizer_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\strings\string_util.cc" />
     <ClCompile Include="src\base\strings\string_util_constants.cc" />
     <ClCompile Include="src\base\strings\sys_string_conversions_win.cc" />
     <ClCompile Include="src\base\strings\utf_offset_string_conversions.cc" />
     <ClCompile Include="src\base\strings\utf_string_conversions.cc" />
-    <ClCompile Include="src\base\strings\utf_string_conversions_fuzzer.cc" />
-    <ClCompile Include="src\base\strings\utf_string_conversions_regression_fuzzer.cc" />
+    <ClCompile Include="src\base\strings\utf_string_conversions_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\base\strings\utf_string_conversions_regression_fuzzer.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\base\strings\utf_string_conversion_utils.cc" />
     <ClCompile Include="src\base\supports_user_data.cc" />
     <ClCompile Include="src\base\synchronization\atomic_flag.cc" />

@@ -94,6 +94,18 @@
     <Filter Include="src\base\memory\__excluded_files">
       <UniqueIdentifier>{cb5ff239-533d-491f-a8c6-84e68ef7179f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\base\message_loop\__excluded_files">
+      <UniqueIdentifier>{77c28e0e-0435-4729-8785-ed6e7981945d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\base\process\__excluded_files">
+      <UniqueIdentifier>{abda98b5-d869-4a81-a310-fe75706b5244}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\base\strings\__excluded_files">
+      <UniqueIdentifier>{4ffc0d39-ad8b-4708-975c-5ea8772b735b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\base\win\__excluded_files">
+      <UniqueIdentifier>{789a01da-f203-44b2-b88f-3be396daff5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base\at_exit.cc">
@@ -189,9 +201,6 @@
     <ClCompile Include="src\base\observer_list_types.cc">
       <Filter>src\base</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\os_compat_nacl.cc">
-      <Filter>src\base</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\path_service.cc">
       <Filter>src\base</Filter>
     </ClCompile>
@@ -202,9 +211,6 @@
       <Filter>src\base</Filter>
     </ClCompile>
     <ClCompile Include="src\base\rand_util.cc">
-      <Filter>src\base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\rand_util_nacl.cc">
       <Filter>src\base</Filter>
     </ClCompile>
     <ClCompile Include="src\base\rand_util_win.cc">
@@ -231,22 +237,10 @@
     <ClCompile Include="src\base\supports_user_data.cc">
       <Filter>src\base</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\sync_socket_nacl.cc">
-      <Filter>src\base</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\sync_socket_win.cc">
       <Filter>src\base</Filter>
     </ClCompile>
     <ClCompile Include="src\base\sys_info.cc">
-      <Filter>src\base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\sys_info_chromeos.cc">
-      <Filter>src\base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\sys_info_freebsd.cc">
-      <Filter>src\base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\sys_info_openbsd.cc">
       <Filter>src\base</Filter>
     </ClCompile>
     <ClCompile Include="src\base\sys_info_win.cc">
@@ -459,13 +453,7 @@
     <ClCompile Include="src\base\memory\shared_memory_handle_win.cc">
       <Filter>src\base\memory</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\memory\shared_memory_helper.cc">
-      <Filter>src\base\memory</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\memory\shared_memory_mapping.cc">
-      <Filter>src\base\memory</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\memory\shared_memory_nacl.cc">
       <Filter>src\base\memory</Filter>
     </ClCompile>
     <ClCompile Include="src\base\memory\shared_memory_tracker.cc">
@@ -498,23 +486,11 @@
     <ClCompile Include="src\base\message_loop\message_pump_default.cc">
       <Filter>src\base\message_loop</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\message_loop\message_pump_glib.cc">
-      <Filter>src\base\message_loop</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\message_loop\message_pump_io_ios.cc">
-      <Filter>src\base\message_loop</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\message_loop\message_pump_libevent.cc">
-      <Filter>src\base\message_loop</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\message_loop\message_pump_win.cc">
       <Filter>src\base\message_loop</Filter>
     </ClCompile>
     <ClCompile Include="src\base\message_loop\pending_task_queue.cc">
       <Filter>src\base\message_loop</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\process\internal_aix.cc">
-      <Filter>src\base\process</Filter>
     </ClCompile>
     <ClCompile Include="src\base\process\kill.cc">
       <Filter>src\base\process</Filter>
@@ -525,28 +501,16 @@
     <ClCompile Include="src\base\process\launch.cc">
       <Filter>src\base\process</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\process\launch_ios.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\process\launch_win.cc">
       <Filter>src\base\process</Filter>
     </ClCompile>
     <ClCompile Include="src\base\process\memory.cc">
       <Filter>src\base\process</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\process\memory_stubs.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\process\memory_win.cc">
       <Filter>src\base\process</Filter>
     </ClCompile>
     <ClCompile Include="src\base\process\process_handle.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\process\process_handle_freebsd.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\process\process_handle_openbsd.cc">
       <Filter>src\base\process</Filter>
     </ClCompile>
     <ClCompile Include="src\base\process\process_handle_win.cc">
@@ -558,28 +522,10 @@
     <ClCompile Include="src\base\process\process_iterator.cc">
       <Filter>src\base\process</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\process\process_iterator_freebsd.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\process\process_iterator_openbsd.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\process\process_iterator_win.cc">
       <Filter>src\base\process</Filter>
     </ClCompile>
     <ClCompile Include="src\base\process\process_metrics.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\process\process_metrics_freebsd.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\process\process_metrics_ios.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\process\process_metrics_nacl.cc">
-      <Filter>src\base\process</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\process\process_metrics_openbsd.cc">
       <Filter>src\base\process</Filter>
     </ClCompile>
     <ClCompile Include="src\base\process\process_metrics_win.cc">
@@ -642,9 +588,6 @@
     <ClCompile Include="src\base\strings\string_util_constants.cc">
       <Filter>src\base\strings</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\strings\string16.cc">
-      <Filter>src\base\strings</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\strings\stringprintf.cc">
       <Filter>src\base\strings</Filter>
     </ClCompile>
@@ -683,9 +626,6 @@
     </ClCompile>
     <ClCompile Include="src\base\synchronization\waitable_event_win.cc">
       <Filter>src\base\synchronization</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\third_party\dmg_fp\dtoa.cc">
-      <Filter>src\base\third_party\dmg_fp</Filter>
     </ClCompile>
     <ClCompile Include="src\base\third_party\dmg_fp\dtoa_wrapper.cc">
       <Filter>src\base\third_party\dmg_fp</Filter>
@@ -852,9 +792,6 @@
     <ClCompile Include="src\base\win\scoped_handle.cc">
       <Filter>src\base\win</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\win\scoped_handle_test_dll.cc">
-      <Filter>src\base\win</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\win\scoped_handle_verifier.cc">
       <Filter>src\base\win</Filter>
     </ClCompile>
@@ -900,9 +837,6 @@
     <ClCompile Include="src\build\precompile.cc">
       <Filter>src\build</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\build_time.cc">
-      <Filter>src\base\__excluded_files</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\files\file_path_watcher_kqueue.cc">
       <Filter>src\base\files\__excluded_files</Filter>
     </ClCompile>
@@ -917,6 +851,81 @@
     </ClCompile>
     <ClCompile Include="src\base\file_descriptor_store.cc">
       <Filter>src\base\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\build_time.cc">
+      <Filter>src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\os_compat_nacl.cc">
+      <Filter>src\base\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\rand_util_nacl.cc">
+      <Filter>src\base\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\sync_socket_nacl.cc">
+      <Filter>src\base\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\sys_info_chromeos.cc">
+      <Filter>src\base\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\sys_info_freebsd.cc">
+      <Filter>src\base\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\sys_info_openbsd.cc">
+      <Filter>src\base\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\memory\shared_memory_helper.cc">
+      <Filter>src\base\memory\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\memory\shared_memory_nacl.cc">
+      <Filter>src\base\memory\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\message_loop\message_pump_glib.cc">
+      <Filter>src\base\message_loop\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\message_loop\message_pump_io_ios.cc">
+      <Filter>src\base\message_loop\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\message_loop\message_pump_libevent.cc">
+      <Filter>src\base\message_loop\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\internal_aix.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\launch_ios.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\memory_stubs.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_handle_freebsd.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_handle_openbsd.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_iterator_freebsd.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_iterator_openbsd.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_metrics_freebsd.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_metrics_ios.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_metrics_nacl.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\process\process_metrics_openbsd.cc">
+      <Filter>src\base\process\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\strings\string16.cc">
+      <Filter>src\base\strings\__excluded_files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\win\scoped_handle_test_dll.cc">
+      <Filter>src\base\win\__excluded_files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1089,9 +1098,6 @@
       <Filter>src\base</Filter>
     </ClInclude>
     <ClInclude Include="src\base\optional.h">
-      <Filter>src\base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\os_compat_nacl.h">
       <Filter>src\base</Filter>
     </ClInclude>
     <ClInclude Include="src\base\path_service.h">
@@ -1424,9 +1430,6 @@
     <ClInclude Include="src\base\memory\shared_memory.h">
       <Filter>src\base\memory</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\memory\shared_memory_helper.h">
-      <Filter>src\base\memory</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\memory\shared_memory_mapping.h">
       <Filter>src\base\memory</Filter>
     </ClInclude>
@@ -1466,12 +1469,6 @@
     <ClInclude Include="src\base\message_loop\message_pump_for_ui.h">
       <Filter>src\base\message_loop</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\message_loop\message_pump_glib.h">
-      <Filter>src\base\message_loop</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\message_loop\message_pump_io_ios.h">
-      <Filter>src\base\message_loop</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\message_loop\message_pump_libevent.h">
       <Filter>src\base\message_loop</Filter>
     </ClInclude>
@@ -1486,9 +1483,6 @@
     </ClInclude>
     <ClInclude Include="src\base\message_loop\timer_slack.h">
       <Filter>src\base\message_loop</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\process\internal_aix.h">
-      <Filter>src\base\process</Filter>
     </ClInclude>
     <ClInclude Include="src\base\process\kill.h">
       <Filter>src\base\process</Filter>
@@ -1886,9 +1880,6 @@
     <ClInclude Include="src\build\precompile.h">
       <Filter>src\build</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\build_time.h">
-      <Filter>src\base\__excluded_files</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\allocator\buildflags.h">
       <Filter>src\base\allocator</Filter>
     </ClInclude>
@@ -1906,6 +1897,30 @@
     </ClInclude>
     <ClInclude Include="src\base\file_descriptor_store.h">
       <Filter>src\base\__excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\win\base_win_buildflags.h">
+      <Filter>src\base\win</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\build_time.h">
+      <Filter>src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\memory\protected_memory_buildflags.h">
+      <Filter>src\base\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\os_compat_nacl.h">
+      <Filter>src\base\__excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\memory\shared_memory_helper.h">
+      <Filter>src\base\memory\__excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\message_loop\message_pump_glib.h">
+      <Filter>src\base\message_loop\__excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\message_loop\message_pump_io_ios.h">
+      <Filter>src\base\message_loop\__excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\process\internal_aix.h">
+      <Filter>src\base\process\__excluded_files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1925,9 +1940,6 @@
       <Filter>src\base</Filter>
     </None>
     <None Include="src\base\PRESUBMIT.py">
-      <Filter>src\base</Filter>
-    </None>
-    <None Include="src\base\sys_info_ios.mm">
       <Filter>src\base</Filter>
     </None>
     <None Include="src\base\containers\OWNERS">
@@ -2028,6 +2040,9 @@
     </None>
     <None Include="src\base\win\windows_undefines.inc">
       <Filter>src\base\win</Filter>
+    </None>
+    <None Include="src\base\sys_info_ios.mm">
+      <Filter>src\base\__excluded_files</Filter>
     </None>
   </ItemGroup>
 </Project>
